@@ -1,0 +1,82 @@
+
+CREATE DATABASE VirtualMix;
+GO
+
+USE VirtualMix;
+GO
+
+-- Tabla de usuarios
+CREATE TABLE Usuarios (
+    Id_Usuario INT IDENTITY(1,1) PRIMARY KEY,
+    Nombre NVARCHAR(100),
+    Correo NVARCHAR(100) UNIQUE,
+    Direccion NVARCHAR(MAX),
+    Contrasena NVARCHAR(50),
+    Tipo NVARCHAR(10) CHECK (Tipo IN ('cliente', 'admin'))
+);
+GO
+
+-- Tabla de productos
+CREATE TABLE Productos (
+    Id_Producto INT IDENTITY(1,1) PRIMARY KEY,
+    Nombre NVARCHAR(100),
+    Descripcion NVARCHAR(MAX),
+    Precio DECIMAL(10,2),
+    Stock INT,
+    Categoria NVARCHAR(50),
+    Imagen NVARCHAR(MAX)
+);
+GO
+
+-- Tabla de carritos
+CREATE TABLE Carritos (
+    Id_Carrito INT IDENTITY(1,1) PRIMARY KEY,
+    Id_Usuario INT,
+    Fecha_Creacion DATETIME DEFAULT GETDATE(),
+    FOREIGN KEY (Id_Usuario) REFERENCES Usuarios(Id_Usuario)
+);
+GO
+
+-- Relación muchos a muchos entre carrito y productos
+CREATE TABLE Carrito_Producto (
+    Id_Carrito INT,
+    Id_Producto INT,
+    Cantidad INT,
+    PRIMARY KEY (Id_Carrito, Id_Producto),
+    FOREIGN KEY (Id_Carrito) REFERENCES Carritos(Id_Carrito),
+    FOREIGN KEY (Id_Producto) REFERENCES Productos(Id_Producto)
+);
+GO
+
+-- Tabla de pedidos
+CREATE TABLE Pedidos (
+    Id_Pedido INT IDENTITY(1,1) PRIMARY KEY,
+    Id_Usuario INT,
+    Fecha DATETIME DEFAULT GETDATE(),
+    Total DECIMAL(10,2),
+    Estado NVARCHAR(20) DEFAULT 'pendiente' CHECK (Estado IN ('pendiente', 'enviado', 'entregado')),
+    FOREIGN KEY (Id_Usuario) REFERENCES Usuarios(Id_Usuario)
+);
+GO
+
+-- Relación entre pedido y productos
+CREATE TABLE Pedido_Producto (
+    Id_Pedido INT,
+    Id_Producto INT,
+    Cantidad INT,
+    PRIMARY KEY (Id_Pedido, Id_Producto),
+    FOREIGN KEY (Id_Pedido) REFERENCES Pedidos(Id_Pedido),
+    FOREIGN KEY (Id_Producto) REFERENCES Productos(Id_Producto)
+);
+GO
+
+-- Tabla de pagos
+CREATE TABLE Pagos (
+    Id_Pago INT IDENTITY(1,1) PRIMARY KEY,
+    Id_Pedido INT,
+    Metodo NVARCHAR(50),
+    Fecha DATETIME DEFAULT GETDATE(),
+    Estado NVARCHAR(20) DEFAULT 'pendiente' CHECK (Estado IN ('pendiente', 'aprobado', 'rechazado')),
+    FOREIGN KEY (Id_Pedido) REFERENCES Pedidos(Id_Pedido)
+);
+GO
