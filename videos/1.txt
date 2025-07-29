@@ -1,1 +1,12 @@
 videos aqui
+samsung s22   
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ePdbj2bZ-Ro?si=Xvu-gPsSlkRjX4rT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+buds 3 pro
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Er6ppurPigo?si=gAgqUX8pxU3pSm1A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+iphone 16
+<iframe width="560" height="315" src="https://www.youtube.com/embed/GDlkCkcIqTs?si=YhcIxA5AJjkqD7bp" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+jbl
+<iframe width="560" height="315" src="https://www.youtube.com/embed/y5PjmhqNnBY?si=ywgR-zKtYPO9sXnL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
