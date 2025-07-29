@@ -1,65 +1,65 @@
 [
     {
         "id": "1",
-        "nombre": "P1",
-        "precio": 1000,
+        "nombre": "asus",
+        "precio": 16000,
         "categoria": "Electrónica",
-        "imagen": "img/producto1.jpg"
+        "imagen": "img/p1.jpg"
     },
     {
         "id": "2",
-        "nombre": "P2",
-        "precio": 2000,
+        "nombre": "Audifonos_Sony",
+        "precio": 900,
         "categoria": "Electrónica",
-        "imagen": "img/producto2.jpg"
+        "imagen": "img/p2.jpg"
     },
     {
         "id": "3",
-        "nombre": "P3",
-        "precio": 3000,
+        "nombre": "Buds3Pro",
+        "precio": 3500,
         "categoria": "Electrónica",
-        "imagen": "img/producto3.jpg"
+        "imagen": "img/p3.jpg"
     },
     {
         "id": "4",
-        "nombre": "P4",
-        "precio": 4000,
+        "nombre": "Control PS5",
+        "precio": 1500,
         "categoria": "Electrónica",
-        "imagen": "img/producto4.jpg"
+        "imagen": "img/p4.jpg"
     },
     {
         "id": "5",
-        "nombre": "P5",
-        "precio": 5000,
+        "nombre": "iPhone 16",
+        "precio": 17999,
         "categoria": "Electrónica",
-        "imagen": "img/producto5.jpg"
+        "imagen": "img/p5.jpg"
     },
     {
         "id": "6",
-        "nombre": "P6",
-        "precio": 6000,
+        "nombre": "Bocina JBL",
+        "precio": 3699,
         "categoria": "Electrónica",
-        "imagen": "img/producto6.jpg"
+        "imagen": "img/p6.jpg"
     },
     {
         "id": "7",
-        "nombre": "P7",
-        "precio": 7000,
+        "nombre": "PS5",
+        "precio": 11999,
         "categoria": "Electrónica",
-        "imagen": "img/producto7.jpg"
+        "imagen": "img/p7.jpg"
     },
     {
         "id": "8",
-        "nombre": "P8",
-        "precio": 8000,
+        "nombre": "Samsung Galaxy S24",
+        "precio": 16700,
         "categoria": "Electrónica",
-        "imagen": "img/producto8.jpg"
+        "imagen": "img/p8.jpg"
     },
     {
         "id": "9",
-        "nombre": "P9",
-        "precio": 9000,
+        "nombre": "TowerMX",
+        "precio": 4798,
         "categoria": "Electrónica",
-        "imagen": "img/producto9.jpg"
+        "imagen": "img/p9.jpg"
     }
 ]

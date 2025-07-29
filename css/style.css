@@ -24,13 +24,13 @@
     --brown: #45371d;
     --peach: #ffe4d5;
     --light-brown: #8e7341;
-    --whitw: #fff;
+    --white: #fff;
     --green: #339f35;
 }
 
 /*Reset CSS*/
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -38,11 +38,11 @@
     overflow-x: hidden;
 }
 
-a{
+a {
     text-decoration: none;
 }
 
-img{
+img {
     position: absolute;
     top: 0;
     left: 0;
@@ -63,7 +63,7 @@ body {
 
 /*Header*/
 
-header {
+main header {
     position: absolute;
     top: 0;
     left: 0;
@@ -121,7 +121,7 @@ main{
     margin-bottom: 40px;
 }
 
-.card_img.ative {
+.card_img.active {
     border: 2px solid var(--light-brown);
 }
 
@@ -164,7 +164,7 @@ main{
 }
 
 .card_cantidad {
-     position: absolute;
+    position: absolute;
     top: 225px;
     left: 25px;
     width: 200;
@@ -393,7 +393,7 @@ main{
 .detalle.item { 
     flex-shrink: 0;
 }
- 
+
 .item_pedido { 
 display: flex;
 gap: 10px;
