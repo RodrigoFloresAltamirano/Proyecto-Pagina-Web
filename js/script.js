@@ -46,32 +46,32 @@ let cart = [];
 
 /* Carga de productos desde el archivo productos.json*/
 async function loadProducts() {
-    try{
+    try {
         const response = await fetch ('productos.json');
         const productos = await response.json();
         displayProductos(productos);
     } catch (error) {
-        console.error('Error al cargar los productos:',error);
+        console.error('Error al cargar los productos:', error);
     }
 }
 
 /* Función para mostrar los productos en el DOM */
 function displayProductos(productos) {
     const productList = document.querySelector('.cards');
-    productos.forEach(productos => {
+    productos.forEach(product => {
         const article = document.createElement('article');
         article.classList.add('cards__card');
         article.innerHTML = `
             <div class="card__img">
-                <img src= "${product.imagen}" alt="${product.nombre}">
+                <img src="${product.imagen}" alt="${product.nombre}">
             </div>
             <div class="card__descripcion">
                 <h4 class="descripcion_categoria">${product.categoria}</h4>
                 <h2 class="descripcion_nombre">${product.nombre}</h2>
-                <p class="descripcion_precio">${product.precio}</p>
+                <p class="descripcion_precio">$${product.precio}</p>
             </div>
-            <button onclick="addToCart(${product.id}, this)" class='card__btn-shop'>
-                <i class = "ri-shopping-cart-2-fill"></i>
+            <button onclick="addToCart(${product.id}, this)" class="card__btn-shop">
+                <i class ="ri-shopping-cart-2-fill"></i>
                 Añadir al carrito
             </button>
             <div class="card__cantidad" id="card__cantidad-${product.id}">
@@ -81,7 +81,7 @@ function displayProductos(productos) {
                 <div class="cantidad__numero" id="cantidad-${product.id}" data-id="${product.id}">
                     1
                 </div>
-                <button class="cantidad__btn-remove" onclick="incrementarProducto(${product.id})">
+                <button class="cantidad__btn-add" onclick="incrementarProducto(${product.id})">
                     <i class="ri-add-circle-line"></i>
                 </button>
             </div>
@@ -91,9 +91,9 @@ function displayProductos(productos) {
 }
 
 /*Función para añadir productos al carrito*/
-function addToCart (productId, buttonElment){
+function addToCart (productId, buttonElement){
     const cantidadElement = document.getElementById(`cantidad-${productId}`);
-    const quantity= parseInt(cantidadElement.textContent,10);
+    const quantity= parseInt(cantidadElement.textContent, 10);
     
     const existingProduct = cart.find(item => item.id === productId);
 
@@ -105,7 +105,7 @@ function addToCart (productId, buttonElment){
         .then(productos => {
             const product = productos.find(p => p.id === productId);
             if (product) {
-                cart.push({...product,quantity: quantity});
+                cart.push({...product, quantity: quantity});
                 displayCart();
             }
         })
@@ -117,7 +117,7 @@ function addToCart (productId, buttonElment){
     const cantidadContainer = buttonElment.nextElementSibiling;
     cantidadContainer.style.display = 'flex';
 
-    const cardImgElement = buttonElment.closest('.cards__card').querySelector('.card.img');
+    const cardImgElement = buttonElment.closest('.cards__card').querySelector('.card__img');
     cardImgElement.classList.add('active');
 }
 
@@ -132,35 +132,36 @@ function incrementarProducto(productId) {
     if (producto) {
     producto.quantity = cantidad;
     }
-displayCart();
+    displayCart();
 }
 /* Función para decrementar la cantidad de un producto */
 function decrementarProducto(productId) {
-const cantidadElemento = document.getElementById(`cantidad-${productId}`);
-let cantidad = parseInt(cantidadElemento.textContent, 10);
+    const cantidadElemento = document.getElementById(`cantidad-${productId}`);
+    let cantidad = parseInt(cantidadElemento.textContent, 10);
 
-if (cantidad > 1) {
-    cantidadElemento.textContent = cantidad;
+    if (cantidad > 1) {
+        cantidad--;
+        cantidadElemento.textContent = cantidad;
     } else {
-    cantidad = 0;
+        cantidad = 0;
 
-    cart = cart.filter(item => item.id !== productId);
+        cart = cart.filter(item => item.id !== productId);
 
-    const cantidadContainer = cantidadElemento.parentElement;
-    const buttonElment = cantidadContainer.previousElementSibling;
-    cantidadContainer.style.display = 'none';
-    buttonElment.style.display = 'inline-block';
+        const cantidadContainer = cantidadElemento.parentElement;
+        const buttonElement = cantidadContainer.previousElementSibling;
+        cantidadContainer.style.display = 'none';
+        buttonElement.style.display = 'inline-block';
     
-    const cardImgElement = buttonElment.closest('.cards__card').querySelector('.card.img');
-    cardImgElement.classList.remove('active');
+        const cardImgElement = buttonElement.closest('.cards__card').querySelector('.card__img');
+        cardImgElement.classList.remove('active');
     }
 
     const producto = cart.find(item => item.id === productId);
-    if(producto) {
+    if (producto) {
         producto.quantity = cantidad;
     }
-    displayCart();
 
+    displayCart();
 }
 
 
@@ -274,6 +275,8 @@ function mostrarModalPedido(){
     document.getElementById('modal-pedido').classList.add('active');
 }
 /* Función para cerrar el modal de pedido y resetear el estado del carrito */
+
+//loadProducts();
 function cerrarModalPedido() {
     document.getElementById('overlay').classList.remove('active');
     document.getElementById('modal-pedido').classList.remove('active');

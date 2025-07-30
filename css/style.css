@@ -85,7 +85,7 @@ main header {
 }
 
 /*Main*/
-main{
+main {
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -103,8 +103,7 @@ main{
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
 
-.cards_card {
-
+.cards__card {
     position: relative;
     width: 250px;
     height: 450px;
@@ -112,7 +111,7 @@ main{
     overflow: hidden;
 }
 
-.card_img {
+.card__img {
     position: relative;
     width: 100%;
     height: 250px;
@@ -131,23 +130,29 @@ main{
     gap: 5px;
 }
 
-.descripcion_categoria {
+.descripcion__categoria {
     color: var(--light-brown);
+    font-size: 1.2em;
+    font-weight: 500;
+}
+
+.descripcion__nombre {
+    color: var(--brown);
     font-size: 1.5em;
     font-weight: 800;
 }
 
-.descripcion_precio {
+.descripcion__precio {
     color: var(--brown);
     font-size: 1.5em;
     font-weight: 600;
 }
 
-.card_btn-shop {
+.card__btn-shop {
     position: absolute;
     top: 225px;
     left: 25px;
-    width: 200;
+    width: 200px;
     padding: 15px;
     border-radius: 25px;
     transition: 0.4s;
@@ -156,20 +161,21 @@ main{
     font-size: 1em;
     font-weight: 600;
     background-color: var(--white);
+    color: var(--brown);
 }
 
-.card_btn-shop i {
+.card__btn-shop i {
     margin-right: 5px;
     color: var(--light-brown);
 }
 
-.card_cantidad {
+.card__cantidad {
     position: absolute;
     top: 225px;
     left: 25px;
-    width: 200;
+    width: 200px;
     padding: 10px;
-    border-radius: 25px;  
+    border-radius: 25px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -181,8 +187,8 @@ main{
     display: none;
 }
 
-.cantidad_btn-add,
-.cantidad_btn-remove { 
+.cantidad__btn-add,
+.cantidad__btn-remove { 
     border: none;
     background-color: transparent;
     cursor: pointer;
@@ -209,7 +215,7 @@ main{
     color: var(--brown);
 }
 
-.cart-list_items {
+.cart-list__items {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -219,13 +225,13 @@ main{
     overflow-y: auto;
 }
 
-.cart-list_items p {
+.cart-list__items p {
     font-size: 1.2em;
     font-weight: 600;
     color: var(--brown);
 }
 
-.items_img { 
+.items__img { 
     position: relative;
     width: 150px;
     height: 150px;
