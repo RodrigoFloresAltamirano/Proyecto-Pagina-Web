@@ -166,22 +166,23 @@ function decrementarProducto(productId) {
 
 
 /* Función para eliminar un producto del carrito */
-function removeFromCart(productId){
+function removeFromCart(productId) {
     cart = cart.filter(item => item.id !== productId);
 
     const cantidadContainer = document.getElementById(`cantidad-${productId}`).parentElement;
     const buttonElment = cantidadContainer.previousElementSibling;
     cantidadContainer.style.display = 'none';
-    buttonElment.style.display = 'inline-block';
+    buttonElement.style.display = 'inline-block';
 
     const cantidadElemento = document.getElementById(`cantidad-${productId}`);
     cantidadElemento.textContent = 1;
 
-    const cardImgElement = buttonElment.closest('.cards__card').querySelector('.card__img');
+    const cardImgElement = buttonElement.closest('.cards__card').querySelector('.card__img');
     cardImgElement.classList.remove('active');
 
     displayCart();
 }
+
 /* Función para mostrar los productos en el carrito */
 
 function displayCart() {
@@ -191,24 +192,24 @@ function displayCart() {
 
     let total = 0;
 
-    if (cart.length === 0){
+    if (cart.length === 0) {
         cartList.innerHTML = `
             <div class="items__img">
-            <img src="img/producto1.jpg" alt="Product 1">
+            <img src="img/p1.jpg" alt="Product 1">
             </div>
-            <p>Tus productos aparecerán aqui</p>
+            <p>Tus productos aparecerán aquí</p>
         `;
     } else {
         cart.forEach(item => {
             total += item.precio * item.quantity;
             cartList.innerHTML += `
-            <div class =  "items__item">
-                <h4>${item.nombre} </h4>
-                <div class="item__detalles">
-                    <p>${item.quantity}x <span>$${item.precio.toFixed(2)}</span></p>
-                    <p>$${(item.precio.toFixed(2) * item.quantity).toFixed(2)}</p>
-                    <button onclick="reomoveFromCart(${item.id})">
-                        <i class="ri-close-circle-line"></i>
+                <div class="items__item">
+                    <h4>${item.nombre}</h4>
+                    <div class="item__detalles">
+                        <p>${item.quantity}x <span>$${item.precio.toFixed(2)}</span></p>
+                        <p>$${(item.precio.toFixed(2) * item.quantity).toFixed(2)}</p>
+                        <button onclick="reomoveFromCart(${item.id})">
+                            <i class="ri-close-circle-line"></i>
                     </button>
                 </div>
             </div>
@@ -216,7 +217,7 @@ function displayCart() {
         });
 
         const totalContainer = document.createElement('div');
-        totalContainer.classList('item__total');
+        totalContainer.classList.add('item__total');
         totalContainer.innerHTML = `
             <div>
                 <span>Total a cancelar: </span>
@@ -228,11 +229,11 @@ function displayCart() {
     }
 
     const checkoutButton = document.getElementById('btn-checkout');
-    if(checkoutButton){ 
-        //checkoutButton.addEventListener('click',mostrarModalPedido);
+    if(checkoutButton) { 
+        checkoutButton.addEventListener('click',mostrarModalPedido);
     }
 
-    const totalItems = cart.reduce((acc,item) => acc + item.quantity,0);
+    const totalItems = cart.reduce((acc,item) => acc + item.quantity, 0);
     cartHeader.textContent = `Tu carrito (${totalItems})`;
 }
 
@@ -246,14 +247,14 @@ function mostrarModalPedido(){
     cart.forEach(item => {
         total += item.precio * item.quantity;
 
-        const detalleItem =  document.createElement('div');
-        detalleItem.classList.add('detalle.item');
+        const detalleItem = document.createElement('div');
+        detalleItem.classList.add('detalle__item');
         detalleItem.innerHTML = `
-            <div class = "item__pedido">
-                <div class = "pedido__img">
+            <div class="item__pedido">
+                <div class="pedido__img">
                     <img src="${item.imagen}" alt="${item.nombre}">
                 </div>
-                <div class= "pedido__lista">
+                <div class="pedido__lista">
                     <p>${item.nombre}</p>
                     <p>${item.quantity} x <span>$${(item.precio).toFixed(2)}</span></p>
                 </div>
@@ -266,8 +267,8 @@ function mostrarModalPedido(){
     const totalElement = document.createElement('div');
     totalElement.classList.add('pedido__total');
     totalElement.innerHTML = `
-        <h4>Total: </h4>
-        <h4>$${total.toFixed(2)} </h4>
+        <h4>Total:</h4>
+        <h4>$${total.toFixed(2)}</h4>
     `;
     pedidoDetalle.appendChild(totalElement)
 
@@ -284,7 +285,7 @@ function cerrarModalPedido() {
     const cardImages = document.querySelectorAll('.card__img.active');
     cardImages.forEach(cardImg => {
         cardImg.classList.remove('active'); 
-    })
+    });
 
     const cantidadContainers = document.querySelectorAll('.card__cantidad');
     cantidadContainers.forEach(cantidadContainer => {
@@ -293,7 +294,7 @@ function cerrarModalPedido() {
 
         const addToCartButton = cantidadContainer.previousElementSibling;
         if (addToCartButton.classList.contains('card__btn-shop')){
-            addToCartButton.style.display = 'block'
+            addToCartButton.style.display = 'block';
         }
     });
 
@@ -302,9 +303,8 @@ function cerrarModalPedido() {
 
     cart.length = 0;
     displayCart();
-
 }
 
-document.getElementById('btn-close').addEventListener('click',cerrarModalPedido);
+document.getElementById('btn-close').addEventListener('click', cerrarModalPedido);
 
 loadProducts();

@@ -238,7 +238,7 @@ main {
     rotate: -20deg;
 }
 
-.items_item {
+.items__item {
     display: flex;
     width: 95%;
     flex-direction: column;
@@ -249,19 +249,19 @@ main {
     flex-shrink: 0;
 }
 
-.items_item h4 {
+.items__item h4 {
     color: var(--light-brown);
     font-size: 1.2em;
     font-weight: 800;
 }
 
-.item_detalles {
+.item__detalles {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.item_detalles p {
+.item__detalles p {
     font-size: 1em;
     font-weight: 700;
     color: var(--brown);
@@ -269,16 +269,16 @@ main {
     gap: 10px;
 }
 
-.item_detallesp span { 
+.item__detalles p span { 
     font-weight: 500;
 }
 
-.item_detalles p:last-child,
-.item_detalles p span {
+.item__detalles p:last-child,
+.item__detalles p span {
     color: var(--light-brown);
 }
 
-.item_detalles button { 
+.item__detalles button { 
     background-color: transparent;
     color: var(--light-brown);
     border: none;
@@ -286,19 +286,19 @@ main {
     cursor: pointer;
 }
 
-.item_total {
+.item__total {
     width: 95%;
     flex-shrink: 0;
 }
 
-.item_total div { 
+.item__total div { 
     padding: 5px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.item_total div span {
+.item__total div span {
     font-size: 1.2em;
     font-weight: 800;
     color: var(--brown);
@@ -325,7 +325,7 @@ main {
 }
 /*Modal*/
 
-.overplay { 
+.overlay { 
     position: fixed;
     top: 0;
     left: 0;
@@ -334,13 +334,14 @@ main {
     background: rgba(0, 0, 0, 0.7);
     display: flex;
     justify-content: center;
+    align-items: center;
     z-index: 1;
     transition: 0.4s;
     visibility: hidden;
     opacity: 0;
 }
 
-.overplay.active { 
+.overlay.active { 
     visibility: visible;
     opacity: 1;
 }
@@ -355,7 +356,7 @@ main {
     visibility: hidden;
     transition: 0.4s;
     opacity: 0;
-    transform: 1;
+    transform: translateY(-100%);
 }
 
 .modal-pedido.active { 
@@ -366,7 +367,7 @@ main {
 
 .modal-pedido i {
     font-size: 3em;
-    color: var(--brown);
+    color: var(--green);
 }
 
 .modal-pedido h2 {
@@ -383,7 +384,7 @@ main {
     margin-bottom: 20px;
 }
 
-.pedido_detalle { 
+.pedido__detalle { 
     background-color: var(--peach);
     padding: 20px;
     border-radius: 8px;
@@ -396,51 +397,57 @@ main {
     overflow-y: auto;
 }
 
-.detalle.item { 
+.detalle__item { 
     flex-shrink: 0;
 }
 
-.item_pedido { 
-display: flex;
-gap: 10px;
-border-bottom: 1px solid rgba(142, 115, 65, 0.2);
-
+.item__pedido { 
+    display: flex;
+    gap: 10px;
+    border-bottom: 1px solid rgba(142, 115, 65, 0.2);
 }
 
-.pedido_img {
+.pedido__img {
     position: relative;
     width: 70px;
     height: 70px;
     border-radius: 8px;
 }
 
-.pedido_lista p {
+.pedido__lista {
+    width: 60%;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.pedido__lista p {
     font-size: 1em;
     font-weight: 700;
     color: var(--brown);
 }
 
-.pedido_lista p span {
+.pedido__lista p span {
     font-size: 1em;
     font-weight: 500;
     color: var(--light-brown);
 }
 
-.item_pedido p:last-child {
+.item__pedido p:last-child {
     display: flex;
     align-items: center;
     font-weight: 700;
     color:  var(--brown);
 }
 
-.pedido_total {
+.pedido__total {
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-shrink: 0;
 }
 
-.pedido_total h4 {
+.pedido__total h4 {
     font-size: 1.5em;
     color: var(--brown)
 }
