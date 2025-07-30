@@ -114,7 +114,7 @@ function addToCart (productId, buttonElement){
 
     buttonElement.style.display = 'none';
 
-    const cantidadContainer = buttonElement.nextElementSibiling;
+    const cantidadContainer = buttonElement.nextElementSibling;
     cantidadContainer.style.display = 'flex';
 
     const cardImgElement = buttonElement.closest('.cards__card').querySelector('.card__img');
@@ -170,7 +170,7 @@ function removeFromCart(productId) {
     cart = cart.filter(item => item.id !== productId);
 
     const cantidadContainer = document.getElementById(`cantidad-${productId}`).parentElement;
-    const buttonElment = cantidadContainer.previousElementSibling;
+    const buttonElement = cantidadContainer.previousElementSibling;
     cantidadContainer.style.display = 'none';
     buttonElement.style.display = 'inline-block';
 

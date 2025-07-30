@@ -1,62 +1,62 @@
 [
     {
-        "id": "1",
+        "id": 1,
         "nombre": "asus",
         "precio": 16000,
         "categoria": "Electrónica",
         "imagen": "img/p1.jpg"
     },
     {
-        "id": "2",
+        "id": 2,
         "nombre": "Audifonos_Sony",
         "precio": 900,
         "categoria": "Electrónica",
         "imagen": "img/p2.jpg"
     },
     {
-        "id": "3",
+        "id": 3,
         "nombre": "Buds3Pro",
         "precio": 3500,
         "categoria": "Electrónica",
         "imagen": "img/p3.jpg"
     },
     {
-        "id": "4",
+        "id": 4,
         "nombre": "Control PS5",
         "precio": 1500,
         "categoria": "Electrónica",
         "imagen": "img/p4.jpg"
     },
     {
-        "id": "5",
+        "id": 5,
         "nombre": "iPhone 16",
         "precio": 17999,
         "categoria": "Electrónica",
         "imagen": "img/p5.jpg"
     },
     {
-        "id": "6",
+        "id": 6,
         "nombre": "Bocina JBL",
         "precio": 3699,
         "categoria": "Electrónica",
         "imagen": "img/p6.jpg"
     },
     {
-        "id": "7",
+        "id": 7,
         "nombre": "PS5",
         "precio": 11999,
         "categoria": "Electrónica",
         "imagen": "img/p7.jpg"
     },
     {
-        "id": "8",
+        "id": 8,
         "nombre": "Samsung Galaxy S24",
         "precio": 16700,
         "categoria": "Electrónica",
         "imagen": "img/p8.jpg"
     },
     {
-        "id": "9",
+        "id": 9,
         "nombre": "TowerMX",
         "precio": 4798,
         "categoria": "Electrónica",
