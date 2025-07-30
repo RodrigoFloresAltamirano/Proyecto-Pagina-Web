@@ -1,21 +1,21 @@
 [
     {
         "id": 1,
-        "nombre": "asus",
+        "nombre": "Asus Tuf Gaming A15",
         "precio": 16000,
         "categoria": "Electrónica",
         "imagen": "img/p1.jpg"
     },
     {
         "id": 2,
-        "nombre": "Audifonos_Sony",
+        "nombre": "Audifonos Sony",
         "precio": 900,
         "categoria": "Electrónica",
         "imagen": "img/p2.jpg"
     },
     {
         "id": 3,
-        "nombre": "Buds3Pro",
+        "nombre": "Buds 3 Pro",
         "precio": 3500,
         "categoria": "Electrónica",
         "imagen": "img/p3.jpg"
