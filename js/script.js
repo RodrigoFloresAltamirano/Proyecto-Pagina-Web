@@ -112,12 +112,12 @@ function addToCart (productId, buttonElement){
         .catch(error => console.error('Error al obtener el producto', error));
     }
 
-    buttonElment.style.display = 'none';
+    buttonElement.style.display = 'none';
 
-    const cantidadContainer = buttonElment.nextElementSibiling;
+    const cantidadContainer = buttonElement.nextElementSibiling;
     cantidadContainer.style.display = 'flex';
 
-    const cardImgElement = buttonElment.closest('.cards__card').querySelector('.card__img');
+    const cardImgElement = buttonElement.closest('.cards__card').querySelector('.card__img');
     cardImgElement.classList.add('active');
 }
 
@@ -195,7 +195,7 @@ function displayCart() {
     if (cart.length === 0) {
         cartList.innerHTML = `
             <div class="items__img">
-            <img src="img/p1.jpg" alt="Product 1">
+            <img src="img/p1.jpg" alt="p1">
             </div>
             <p>Tus productos aparecerán aquí</p>
         `;
@@ -208,7 +208,7 @@ function displayCart() {
                     <div class="item__detalles">
                         <p>${item.quantity}x <span>$${item.precio.toFixed(2)}</span></p>
                         <p>$${(item.precio.toFixed(2) * item.quantity).toFixed(2)}</p>
-                        <button onclick="reomoveFromCart(${item.id})">
+                        <button onclick="removeFromCart(${item.id})">
                             <i class="ri-close-circle-line"></i>
                     </button>
                 </div>

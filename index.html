@@ -6,8 +6,6 @@
     <title>Proyecto Mixup</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="css/style.css">
-        <!--Se agrega remixicon -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css">
 </head>
 <body class="bg-black text-white">
     <!-- Header -->
@@ -20,7 +18,7 @@
             <nav>
                 <ul class="flex space-x-6">
                     <li><a href="#" class="hover:text-indigo-200 transition">Inicio</a></li>
-                    <li><a href="#" class="hover:text-indigo-200 transition">Catálogo</a></li>
+                    <li><a href="catalogo.html"  class="hover:text-indigo-200 transition">Catálogo</a></li>
                     <li><a href="#" class="hover:text-indigo-200 transition">Carrito</a></li>
                     <li><a href="login.html" class="hover:text-indigo-200 transition">Login</a></li>
                 </ul>
@@ -82,41 +80,6 @@
             </div>
         </div>
     </section>
-    <!-- Header -->
-    <header>
-        <a href="#" class="logo">
-            <i class="ri-store-3-line"></i> Tienda Online
-        </a>
-    </header>
-    <!-- Titulo carrito de compras  aqui estaria el main en el video-->
-        <!-- Lista de Productos -->
-        <section class="cards">
-
-        </section>
-
-    <!-- Carrito -->
-        <section class="cart-list">
-            <h2>Tu carrito (0)</h2>
-            <div class="cart-list__items">
-                <div class="items__img">
-                    <img src="img/logo.jpg" alt="Producto"> <!-- coffee -->
-                </div>
-                <p>Tus productos aparecerán aquí</p>
-            </div>
-        </section>
-
-    <!-- Modal -->
-    <div class="overlay" id="overlay">
-        <div class="modal-pedido" id="modal-pedido">
-            <i class="ri-checkbox-circle-line"></i>
-            <h2>Pedido realizado con éxito</h2>
-            <p>Esperemos que disfrutes tu compra!</p>
-            <div class="pedido__detalle">
-
-            </div>
-            <button class="btn" id="btn-close">Realizar Nuevo Pedido</button>
-        </div>
-    </div>
     <!-- Caracteristicas -->
     <section class="bg-gray-50 py-16">
         <div class="container mx-auto px-4">
@@ -180,7 +143,5 @@
             </div>
         </div>
     </footer>
-    <!-- Script index.js -->
-    <script src="js/script.js"></script>
 </body>
 </html>

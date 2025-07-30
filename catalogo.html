@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Estilos CSS-->
+    <link rel="stylesheet" href="css/catalogo.css">
+    <!--Remixicon-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css">
+    <title>Catalogo de Productos Vmix</title>
+</head>
+<body>
+
+
+    <!-- Header -->
+    <header>
+        <a href="#" class="logo">
+            <i class="ri-store-3-line"></i> Tienda Online
+        </a>
+    </header>
+
+    <!--Main-->
+    <main>
+        <!-- Lista de Productos -->
+        <section class="cards">
+
+        </section>
+
+
+
+        <!-- Carrito -->
+        <section class="cart-list">
+            <h2>Tu carrito (0)</h2>
+            <div class="cart-list__items">
+                <div class="items__img">
+                    <img src="img/logo.jpg" alt="Producto"> <!-- coffee -->
+                </div>
+                <p>Tus productos aparecerán aquí</p>
+            </div>
+        </section>
+    <!-- Modal -->
+    <div class="overlay" id="overlay">
+        <div class="modal-pedido" id="modal-pedido">
+            <i class="ri-checkbox-circle-line"></i>
+            <h2>Pedido realizado con éxito</h2>
+            <p>Esperemos que disfrutes tu compra!</p>
+            <div class="pedido__detalle">
+
+            </div>
+            <button class="btn" id="btn-close">Realizar Nuevo Pedido</button>
+        </div>
+    </div>
+
+
+
+    </main>
+        <!-- Script catalogo.js -->
+    <script src="js/script.js"></script>
+</body>
+</html>
