@@ -135,8 +135,9 @@ main {
     position: absolute;
     top: 225px;
     left: 25px;
+    height: 60px; /*Se agrega height para hacer el ancho mas delgao*/
     width: 200px;
-    padding: 15px;
+    padding: 10px; /*Se reduce padding*/
     border-radius: 25px;
     transition: 0.4s;
     cursor: pointer;
