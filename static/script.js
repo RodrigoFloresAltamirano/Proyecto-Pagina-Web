@@ -100,7 +100,7 @@ function addToCart (productId, buttonElement){
     if (existingProduct) {
         existingProduct.quantity += quantity;
     } else {
-        fetch('productos.json')
+        fetch('static/productos.json')
         .then(response => response.json())
         .then(productos => {
             const product = productos.find(p => p.id === productId);
@@ -195,7 +195,7 @@ function displayCart() {
     if (cart.length === 0) {
         cartList.innerHTML = `
             <div class="items__img">
-            <img src="img/carrito.png" alt="p1">
+            <img src="static/img/carrito.png" alt="p1">
             </div>
             <p>Tus productos aparecerán aquí</p>
         `;
